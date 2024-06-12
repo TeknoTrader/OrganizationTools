@@ -1,6 +1,9 @@
 #----------------------------------------------------------
 #----------------------------------------------------------
 #     THIS IS A WEB APP THAT I REALIZED USING STREAMLIT
+# With this web app you will be able to organize yourself for exams, 
+# work projects and all that requires ending a certain task within a 
+# certain T amount of time.
 #----------------------------------------------------------
 #----------------------------------------------------------
 import pandas as pd
