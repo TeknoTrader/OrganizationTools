@@ -1,0 +1,116 @@
+#--------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------
+
+#    The code represent a system that should help me to choose who of the people I work with should do a task for work during the weekend
+#    Because we ususally decided that "randomly", I just decided to make a program that do it for us and that allows to keep in consideration our needs
+
+#                                        ATTENTION!!!  THIS IS STILL A WORK IN PROGRESS!!!  
+
+#    I just started to do it, but it is funny to see some of the things I added in order to make it possible, and also the possibilities to add "non weekend days"
+#    We just have to add the "random variables", in order to make it possible to do the "possible scenarios"
+
+#--------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------
+
+# File per determinare l'assegnazione dei turni ai dipendenti
+import datetime
+from datetime import date
+import pandas as pd
+# 1) Assegnazione dei nomi                      DONE
+# 2) Assegnazione dei giorni assenti            DONE
+# 3) Associazione di nomi a giorni assenti      DONE
+# 3.5) QUali sono i giorni da assegnare?        DONE
+# 4) Da mettere quante persone ci devono essere per ogni giorno         DONE
+# 5) Array con giorni papabili persona per persona                      DONE
+# 6) Vedere se ci sono "scelte imperative"              FATTO MA BISOGNA FARE DEGLI ARRAY IN MERITO
+# 7) Procedere ad assegnazione random (si tira a caso un numero da 1 a tot impiegati, che rappresenta a chi tocca quel giorno)
+# 8) Tenere in considerazione che uno non può fare due sabati e/o due domeniche di fila eh
+a = datetime.date.today()
+
+# From string to date
+def StringToDay(day):
+    day = datetime.datetime.strptime(day, '%Y-%m-%d')
+    return (day)
+
+# Day of week function
+def DayOfWeek(day):
+    day = pd.Timestamp (day)
+    return day.isoweekday()
+# print(DayOfWeek("2024-06-14"))  # test it out
+# Funzione giorno
+def Day (year,month,day):
+    return date(year,month,day)
+
+number = int(input("Number of employees: "))
+
+employees = []
+print("\tLET'S ADD THE NOMINATIVE OF THE EMPLOYERS")
+i = 1
+while i <= number:
+    Nome = input(f"Employee number {i} is: ")
+    employees.append(Nome)
+    i += 1
+print(employees) # Verify the array
+
+print("\n\tWHEN ARE THEY BUSY?")
+daysOff = []
+for i in employees:  #Look into the array
+    print("DETAILS ABOUT \"",i,"\"")
+    numberOfDays = int(input("Total days off: \t"))
+    if(numberOfDays>=0):
+        y = 1
+        arr = []
+        while y <= numberOfDays:
+            a = input("Seleziona una data in questo formato (Anno-Mese-Giorno) \"2020-05-01\": \t")
+            y += 1
+            arr.append(a)
+        daysOff.append(arr)
+print(daysOff) # Let's test it out
+
+# Function to determine avaibility
+def Avaible(da,array):
+    for i in range(len(array)):
+        for y in range(len(array[i])):
+            print(array[i][y])
+            if (da == array[i][y]):
+                return False
+                break
+            else:
+                continue
+
+print("\n\tLET'S SEE THE DAYS NOW!\n")
+#option = input("Do you need only the weekends? Answer YES or NO\n")
+weekends = int(input("Number of weekends to consider: \t"))
+daysToConsider = []
+today = datetime.date.today()
+while (len(daysToConsider)/2)<weekends:  # it is divided by two because there are 2 days in a weekend
+    today += datetime.timedelta(days=1)
+    if(DayOfWeek(today)==6 or DayOfWeek(today)==7):
+        daysToConsider.append(today)
+
+print("\n")
+for i in range(len (daysToConsider)):
+    print("The day number ",i, "is: ",daysToConsider[i])
+
+print("\nAUTOMATIC EMPLOYES PROCESSING")
+avaible_complex = []
+for z in daysToConsider:
+    avaible = []
+    print("\nDate: ",z)
+    for i in range(len (daysOff)):
+        if (len(daysOff[i]) == 0):
+            avaible.append(True)
+        else:
+          for y in range ( len (daysOff[i])):
+              value = StringToDay(daysOff[i][y])
+              if (value.year == z.year) and (value.month == z.month) and (value.day == z.day):
+                print(employees[i], " is not avaible")  # The cycle is gone wrong
+                avaible.append(False)
+                break
+              else:
+                if(y==len(daysOff[i])-1): #The cicle is over with success
+                  print(employees[i], " AVAIBLE")
+                  avaible.append(True)
+    avaible_complex.append(avaible)   # Everytime the days end, report the results
+
+print(avaible_complex)
