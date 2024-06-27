@@ -18,7 +18,7 @@ import math
 
 # The day of the exam
 st.write("# DETAILS ABOUT THE 📚 EXAM")
-st.write("### Let's see when we are going to do it 📅\n### Please, insert the date compiling the following parameters\n")
+st.write("### Let's see when we are going to do it\n### Please, insert the date compiling the following parameters 📅\n")
 year = 2024
 year1 = st.number_input("Insert the year: ", value = 2024, step=1, min_value=2024)
 year = int(year1)   #,value = 2024, step = 1)#value = datetime.today().year)  # Insert the year of the exam
