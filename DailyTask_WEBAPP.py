@@ -39,7 +39,7 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
   st.write("\n### Average pages 📝 per day:\t",math.ceil(pages/(diff.days-1)))  # Round at the next integer number
 
   st.write("\n\n\n")
-  st.write("# Do you want to have the time to do a review or to relax?")
+  st.write("# Do you want to have the time to do a review or to relax? 🧘‍♀️")
   st.write("### You calculate how to do that: let's see different scenarios!")
 
   increment = st.number_input("Interval progression: ", min_value=1,step=1)  # Let's see different scenarios, starting from here
@@ -53,6 +53,6 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
 
 else:
     st.write("\n")
-    st.write("# ATTENTION!!!")
+    st.write("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️")
     st.write("\n")
-    st.write("### The exam should be AFTER the actual date!")
+    st.write("### The exam should be AFTER the actual date!!!")
