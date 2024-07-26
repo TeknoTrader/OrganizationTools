@@ -44,12 +44,28 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
 
   increment = st.number_input("Interval progression: ", min_value=1,step=1)  # Let's see different scenarios, starting from here
   possibilities = 0
+  pages_number = []
+  days_number = []
   while diff.days > possibilities:   # Calculating the possible scenarios
     possibilities += increment
     if(diff.days-1-possibilities > 0):   # Avoiding 0 divisions or other common errors
-      st.write(f"\nTo have {possibilities} days off, you should study: {round(pages/(diff.days-1-possibilities),1)} pages 📖 per day")
+      pages_number.append(round(pages/(diff.days-1-possibilities),1) 
+      days_number.append(i)
     else:
       break  # End of the cycle in case of 0 division or negative numbers of days
+# Creazione del grafico a barre
+  fig, ax = plt.subplots()
+  ax.bar(categories, values)
+
+  # Etichettatura del grafico
+  ax.set_xlabel('Rest days')
+  ax.set_ylabel('Pages per day')
+  ax.set_title('Studying possibilities')
+
+  # Visualizzazione del grafico usando Streamlit
+  st.pyplot(fig)
+  for i in range(days_number):
+      st.write(f"\nTo have {possibilities} days off, you should study: {round(pages/(diff.days-1-possibilities),1)} pages 📖 per day")
 
 else:
     st.write("\n")
