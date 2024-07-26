@@ -1,15 +1,15 @@
 #----------------------------------------------------------
 #----------------------------------------------------------
 #     THIS IS A WEB APP THAT I REALIZED USING STREAMLIT
-# With this web app you will be able to organize yourself for exams, 
-# work projects and all that requires ending a certain task within a 
+# With this web app you will be able to organize yourself for exams,
+# work projects and all that requires ending a certain task within a
 # certain T amount of time.
 #----------------------------------------------------------
 #----------------------------------------------------------
 import pandas as pd
 import streamlit as st
 import numpy as np
-
+import matplotlib.pyplot as plt
 import datetime
 from datetime import date
 import math
@@ -49,13 +49,13 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
   while diff.days > possibilities:   # Calculating the possible scenarios
     possibilities += increment
     if(diff.days-1-possibilities > 0):   # Avoiding 0 divisions or other common errors
-      pages_number.append(round(pages/(diff.days-1-possibilities),1) 
-      days_number.append(i)
+      pages_number.append(round(pages/(diff.days-1-possibilities),1))
+      days_number.append(possibilities)
     else:
       break  # End of the cycle in case of 0 division or negative numbers of days
 # Creazione del grafico a barre
   fig, ax = plt.subplots()
-  ax.bar(categories, values)
+  ax.bar(days_number, pages_number)
 
   # Etichettatura del grafico
   ax.set_xlabel('Rest days')
@@ -64,7 +64,7 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
 
   # Visualizzazione del grafico usando Streamlit
   st.pyplot(fig)
-  for i in range(days_number):
+  for i in range(len(days_number)):
       st.write(f"\nTo have {i} days off, you should study: {pages_number[i]} pages 📖 per day")
 
 else:
