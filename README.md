@@ -1,5 +1,5 @@
 # OrganizationTools
-Here you can find the simple python codes I use in order to **organize myself** and my daily routines: in fact I developed this [web application](https://teknotrader-organization-tool.streamlit.app/), and with this repository you can **analize the source code**.
+Here you can find the simple python codes I use in order to **organize myself** and my daily routines: in fact I developed this [web application](https://organizationtools.streamlit.app/), and with this repository you can **analize the source code**.
 
 You can use this programs to:
 - Understand how much you have to work in order to **reach a predifined goal**.
