@@ -66,7 +66,12 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
 
   # Comments to clarify
   for i in range(len(days_number)):
+    if (len(days_number > 10):
       st.write(f"\nTo have {i} days off, you should study: {pages_number[i]} pages 📖 per day")
+    else if (len(days_number > 5 and len(days_number < 10):
+      st.subtitle(f"\nTo have {i} days off, you should study: {pages_number[i]} pages 📖 per day")
+    else:
+      st.header(f"\nTo have {i} days off, you should study: {pages_number[i]} pages 📖 per day")
 
 else:
     st.write("\n")
