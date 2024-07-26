@@ -53,17 +53,18 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
       days_number.append(possibilities)
     else:
       break  # End of the cycle in case of 0 division or negative numbers of days
-# Creazione del grafico a barre
+  # Chart creation
   fig, ax = plt.subplots()
   ax.bar(days_number, pages_number)
-
-  # Etichettatura del grafico
   ax.set_xlabel('Rest days')
   ax.set_ylabel('Pages per day')
   ax.set_title('Studying possibilities')
 
-  # Visualizzazione del grafico usando Streamlit
-  st.pyplot(fig)
+  # Visualization
+  if (len(days_number) > 1):
+    st.pyplot(fig)
+
+  # Comments to clarify
   for i in range(len(days_number)):
       st.write(f"\nTo have {i} days off, you should study: {pages_number[i]} pages 📖 per day")
 
