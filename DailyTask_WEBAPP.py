@@ -65,7 +65,7 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
   # Visualizzazione del grafico usando Streamlit
   st.pyplot(fig)
   for i in range(days_number):
-      st.write(f"\nTo have {possibilities} days off, you should study: {round(pages/(diff.days-1-possibilities),1)} pages 📖 per day")
+      st.write(f"\nTo have {i} days off, you should study: {pages_number[i]} pages 📖 per day")
 
 else:
     st.write("\n")
