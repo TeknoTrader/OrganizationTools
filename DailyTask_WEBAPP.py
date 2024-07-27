@@ -16,11 +16,12 @@ import math
 
 # Some information about me
 st.sidebar.write("# Who built this web application?")
+st.sidebar.write("### My name is Nicola Chimenti. I'm currently pursuing a degree in \"Digital Economics\" and I love programming and Data Science")
 st.sidebar.image("https://i.postimg.cc/7LynpkrL/Whats-App-Image-2024-07-27-at-16-36-44.jpg", caption='Created by Nicola Chimenti') #, use_column_width=True)
 st.sidebar.write("\n# CONTACT ME")
-st.sidebar.write("### [LinkedIn](https://www.linkedin.com/in/nicolachimenti?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)")
-st.sidebar.write("### Email: nicola.chimenti.work@gmail.com")
-st.sidebar.write("### [Fiverr](https://www.fiverr.com/teknonicola?public_mode=true)")
+st.sidebar.write("### ◾ [LinkedIn](https://www.linkedin.com/in/nicolachimenti?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)")
+st.sidebar.write("### ◾ Email: nicola.chimenti.work@gmail.com")
+st.sidebar.write("### ◾ [Fiverr](https://www.fiverr.com/teknonicola?public_mode=true)")
 st.sidebar.write("\n# RESOURCES")
 st.sidebar.write("[GitHub Profile](https://github.com/TeknoTrader)")
 st.sidebar.write("\n### Are you interested in the source code?")
