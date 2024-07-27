@@ -39,42 +39,46 @@ st.write("\n")
 if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and today
   st.write("# STARTING OF THE OUTPUTS")
   st.write ("\n### Days left ⏰ for the exam/deadline:\t",diff.days)                # Days left, output print
-  st.write("\n### Average pages/tasks 📝 per day:\t",math.ceil(pages/(diff.days-1)))  # Round at the next integer number
+  if (diff.days > 1):
+    st.write("\n### Average pages/tasks 📝 per day:\t",math.ceil(pages/(diff.days-1)))  # Round at the next integer number
+  else:
+    st.write("\n### Only one day to finish all.\nAverage pages/tasks 📝 per day:\t",pages) # Only one day to finish all...
 
-  st.write("\n\n\n")
-  st.write("# Do you want to have the time to do a review of your work or to relax? 🧘‍♀️")
-  st.write("### You calculate how to do that: let's see different scenarios!")
+  if (diff.days > 1):
+    st.write("\n\n\n")
+    st.write("# Do you want to have the time to do a review of your work or to relax? 🧘‍♀️")
+    st.write("### You calculate how to do that: let's see different scenarios!")
 
-  increment = st.number_input("Interval progression: ", min_value=1,step=1)  # Let's see different scenarios, starting from here
-  possibilities = 0
-  pages_number = []
-  days_number = []
-  while diff.days > possibilities:   # Calculating the possible scenarios
-    possibilities += increment
-    if(diff.days-1-possibilities > 0):   # Avoiding 0 divisions or other common errors
-      pages_number.append(round(pages/(diff.days-1-possibilities),1))
-      days_number.append(possibilities)
-    else:
-      break  # End of the cycle in case of 0 division or negative numbers of days
-  # Chart creation
-  fig, ax = plt.subplots()
-  ax.bar(days_number, pages_number)
-  ax.set_xlabel('Rest days')
-  ax.set_ylabel('Pages/tasks per day')
-  ax.set_title('Possible organizations strategies')
+    increment = st.number_input("Interval progression: ", min_value=1,step=1)  # Let's see different scenarios, starting from here
+    possibilities = 0
+    pages_number = []
+    days_number = []
+    while diff.days > possibilities:   # Calculating the possible scenarios
+      possibilities += increment
+      if(diff.days-1-possibilities > 0):   # Avoiding 0 divisions or other common errors
+        pages_number.append(round(pages/(diff.days-1-possibilities),1))
+        days_number.append(possibilities)
+      else:
+        break  # End of the cycle in case of 0 division or negative numbers of days
+    # Chart creation
+    fig, ax = plt.subplots()
+    ax.bar(days_number, pages_number)
+    ax.set_xlabel('Rest days')
+    ax.set_ylabel('Pages/tasks per day')
+    ax.set_title('Possible organizations strategies')
 
-  # Visualization
-  if (len(days_number) > 1):
-    st.pyplot(fig)
+    # Visualization
+    if (len(days_number) > 1):
+      st.pyplot(fig)
 
-  # Comments to clarify
-  for i in range(len(days_number)):
-    if (len(days_number) > 10):
-      st.write(f"\nTo have {(1+i) * increment} days off, you should study/do: {pages_number[i]} pages/tasks 👩🏻‍💻 per day")
-    elif (len(days_number) > 5):
-      st.write("\n### To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
-    else:
-      st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
+    # Comments to clarify
+    for i in range(len(days_number)):
+      if (len(days_number) > 10):
+        st.write(f"\nTo have {(1+i) * increment} days off, you should study/do: {pages_number[i]} pages/tasks 👩🏻‍💻 per day")
+      elif (len(days_number) > 5):
+        st.write("\n### To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
+      else:
+        st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
 
 else:
     st.write("\n")
