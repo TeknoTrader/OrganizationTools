@@ -15,7 +15,7 @@ from datetime import date
 import math
 
 st.sidebar.write("# Are you interested in the source code?")
-st.sidebar.write("### Visit this [GitHub link](https://github.com/TeknoTrader/OrganizationTools)")
+st.sidebar.write("### Visit the [GitHub page](https://github.com/TeknoTrader/OrganizationTools)")
 
 # Description of the program
 st.write("# LET'S ORGANIZE YOUR STUDY/WORK! 🏃")
