@@ -70,11 +70,11 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
   # Comments to clarify
   for i in range(len(days_number)):
     if (len(days_number) > 10):
-      st.write(f"\nTo have {i * increment} days off, you should study/do: {pages_number[i]} pages/tasks 👩🏻‍💻 per day")
+      st.write(f"\nTo have {(1+i) * increment} days off, you should study/do: {pages_number[i]} pages/tasks 👩🏻‍💻 per day")
     elif (len(days_number) > 5):
-      st.write("\n### To have ", i * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
+      st.write("\n### To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
     else:
-      st.write("\n# To have ", i * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
+      st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
 
 else:
     st.write("\n")
