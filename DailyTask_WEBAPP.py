@@ -42,7 +42,7 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
   if (diff.days > 1):
     st.write("\n### Average pages/tasks 📝 per day:\t",math.ceil(pages/(diff.days-1)))  # Round at the next integer number
   else:
-    st.write("\n### Only one day to finish all.\nAverage pages/tasks 📝 per day:\t",pages) # Only one day to finish all...
+    st.write("\n### With only one day to finish all, unfortunately this web app can't help you...\nAverage pages/tasks 📝 per day:\t",pages) # Only one day to finish all...
 
   if (diff.days > 1):
     st.write("\n\n\n")
