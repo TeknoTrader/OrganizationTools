@@ -14,8 +14,11 @@ import datetime
 from datetime import date
 import math
 
-# INPUTS
+# Description of the program
+st.write("# Let's organize your study/word!")
+st.write("### With this simple and practise web application you can see how much you should work/study to complete a certain task within a certain date")
 
+# INPUTS
 # The day of the exam
 st.write("# DETAILS ABOUT THE 📚 EXAM")
 st.write("### Let's see when we are going to do it\n### Please, insert the date compiling the following parameters 📅\n")
