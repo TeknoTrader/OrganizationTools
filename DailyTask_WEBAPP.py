@@ -15,8 +15,8 @@ from datetime import date
 import math
 
 # Some information about me
-st.sidebar.image("https://i.postimg.cc/7LynpkrL/Whats-App-Image-2024-07-27-at-16-36-44.jpg", caption='For other resources, visit my [GitHub profile](https://github.com/TeknoTrader)', use_column_width=True)
-st.write("# Are you interested in the source code?")
+st.sidebar.image("https://i.postimg.cc/7LynpkrL/Whats-App-Image-2024-07-27-at-16-36-44.jpg", caption='Created by Nicola Chimenti') #, use_column_width=True)
+st.write("\n# Are you interested in the source code?")
 st.sidebar.write("### Visit the [GitHub page](https://github.com/TeknoTrader/OrganizationTools)")
 
 # Description of the program
