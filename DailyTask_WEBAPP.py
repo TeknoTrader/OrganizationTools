@@ -15,12 +15,12 @@ from datetime import date
 import math
 
 # Description of the program
-st.write("# Let's organize your study/word!")
+st.write("# LET'S ORGANIZE YOUR STUDY/WORK!")
 st.write("### With this simple and practise web application you can see how much you should work/study to complete a certain task within a certain date")
 
 # INPUTS
 # The day of the exam
-st.write("# DETAILS ABOUT THE 📚 EXAM")
+st.write("# First step: DETAILS ABOUT THE 📚 EXAM")
 st.write("### Let's see when we are going to do it\n### Please, insert the date compiling the following parameters 📅\n")
 year = 2024
 year1 = st.number_input("Insert the year: ", value = 2024, step=1, min_value=2024)
