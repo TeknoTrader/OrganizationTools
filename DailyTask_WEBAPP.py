@@ -14,6 +14,9 @@ import datetime
 from datetime import date
 import math
 
+st.sidebar.write("# Are you interested in the source code?")
+st.sidebar.write("### Visit this GitHub [link](https://github.com/TeknoTrader/OrganizationTools)")
+
 # Description of the program
 st.write("# LET'S ORGANIZE YOUR STUDY/WORK! 🏃")
 st.write("### With this simple and practise web application you can see how much you should work/study to complete a certain task within a certain date")
