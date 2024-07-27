@@ -14,9 +14,10 @@ import datetime
 from datetime import date
 import math
 
-st.sidebar.write("# Are you interested in the source code?")
+# Some information about me
+st.sidebar.image("https://i.postimg.cc/7LynpkrL/Whats-App-Image-2024-07-27-at-16-36-44.jpg", caption='For other resources, visit my [GitHub profile](https://github.com/TeknoTrader)', use_column_width=True)
+st.write("# Are you interested in the source code?")
 st.sidebar.write("### Visit the [GitHub page](https://github.com/TeknoTrader/OrganizationTools)")
-st.sidebar.image("https://i.postimg.cc/7LynpkrL/Whats-App-Image-2024-07-27-at-16-36-44.jpg")
 
 # Description of the program
 st.write("# LET'S ORGANIZE YOUR STUDY/WORK! 🏃")
