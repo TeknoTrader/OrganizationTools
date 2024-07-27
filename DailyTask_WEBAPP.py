@@ -26,7 +26,8 @@ month1 = st.slider("Month: ", 1,12,1)
 day1 = st.slider("Day: ", 1,31,1)
 
 ft = date(year,month1,day1)
-pages = st.number_input("Number of pages 📖: ", step=1)
+st.write("### How much do you have to study 📖?")
+pages = st.number_input("Number of pages: ", step=1)
 
 # Days left?
 td = datetime.date.today()       # Actual datetime
@@ -67,11 +68,11 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
   # Comments to clarify
   for i in range(len(days_number)):
     if (len(days_number) > 10):
-      st.write(f"\nTo have {i} days off, you should study: {pages_number[i]} pages 📖 per day")
+      st.write(f"\nTo have {i} days off, you should study: {pages_number[i] * increment} pages 📖 per day")
     elif (len(days_number) > 5):
-      st.write("\n### To have ", i, " days off, you should study: ", pages_number[i], " pages 📖 per day")
+      st.write("\n### To have ", i, " days off, you should study: ", pages_number[i] * increment, " pages 📖 per day")
     else:
-      st.write("\n# To have ", i, " days off, you should study: ", pages_number[i], " pages 📖 per day")
+      st.write("\n# To have ", i, " days off, you should study: ", pages_number[i] * increment, " pages 📖 per day")
 
 else:
     st.write("\n")
