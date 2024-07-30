@@ -27,6 +27,7 @@ st.sidebar.write("[GitHub Profile](https://github.com/TeknoTrader)")
 st.sidebar.write("\n### Are you interested in the source code?")
 st.sidebar.write("Visit the [GitHub page](https://github.com/TeknoTrader/OrganizationTools)")
 
+td = datetime.date.today()       # Actual datetime
 
 # Description of the program
 st.write("# LET'S ORGANIZE YOUR STUDY/WORK! 🏃")
@@ -38,15 +39,14 @@ st.write("### Let's see when we are going to do it\n### Please, insert the date 
 year = 2024
 year1 = st.number_input("Insert the year: ", value = 2024, step=1, min_value=2024)
 year = int(year1)   #,value = 2024, step = 1)#value = datetime.today().year)  # Insert the year of the exam
-month1 = st.slider("Month: ", 1,12,1)
-day1 = st.slider("Day: ", 1,31,1)
+month1 = st.slider("Month: ", value = td.day,12,1)
+day1 = st.slider("Day: ", value = td.month,31,1)
 
 ft = date(year,month1,day1)
 st.write("### How much do you have to study/work 📖?")
 pages = st.number_input("Number of pages/tasks: ", step=1)
 
 # Days left?
-td = datetime.date.today()       # Actual datetime
 diff = ft - td   # How many days are left for the exam?
 
 st.write("\n")
@@ -97,4 +97,4 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
 
 else:
     st.write("\n")
-    st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### The exam should be AFTER the actual date!!!")
+    st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### The exam/deadline should be AFTER the actual date!!!")
