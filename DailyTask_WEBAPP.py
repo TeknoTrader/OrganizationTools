@@ -99,4 +99,4 @@ else:
     st.write("\n")
     st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️")
     st.write("\n")
-    st.write("### The exam should be AFTER the actual date!!!")
+    st.warning("### The exam should be AFTER the actual date!!!")
