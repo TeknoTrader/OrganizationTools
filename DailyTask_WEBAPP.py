@@ -37,10 +37,10 @@ st.write("### With this simple and practise web application you can see how much
 st.write("# First step: INSERT DETAILS ABOUT THE 📚 EXAM/DEADLINE")
 st.write("### Let's see when we are going to do it\n### Please, insert the date compiling the following parameters 📅\n")
 year = 2024
-year1 = st.number_input("Insert the year: ", value = 2024, step=1, min_value=2024)
+year1 = st.number_input("Insert the year: ", min_value = td.year, value = td.year, step=1)
 year = int(year1)   #,value = 2024, step = 1)#value = datetime.today().year)  # Insert the year of the exam
-month1 = st.slider("Month: ", value = td.day,12,1)
-day1 = st.slider("Day: ", value = td.month,31,1)
+month1 = st.slider("Month: ", min_value=1, max_value=12, value = td.month, step=1)
+day1 = st.slider("Day: ", min_value=1, max_value=12, value = td.day, step=1)
 
 ft = date(year,month1,day1)
 st.write("### How much do you have to study/work 📖?")
