@@ -97,6 +97,6 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
 
 else:
     st.write("\n")
-    st.write("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️")
+    st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️")
     st.write("\n")
     st.write("### The exam should be AFTER the actual date!!!")
