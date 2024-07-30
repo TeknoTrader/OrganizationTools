@@ -27,7 +27,7 @@ st.sidebar.write("◾ [GitHub Profile](https://github.com/TeknoTrader)")
 st.sidebar.write("◾ [MQL5 Profile](https://www.mql5.com/it/users/teknotrader) with reviews")
 st.sidebar.write("◾ [MT4 free softwares](https://www.mql5.com/it/users/teknotrader/seller#!category=2) for trading")
 st.sidebar.write("\n### Are you interested in the source code? 🧾")
-st.sidebar.write("Visit the [GitHub page](https://github.com/TeknoTrader/OrganizationTools)")
+st.sidebar.write("Visit the [GitHub repository](https://github.com/TeknoTrader/OrganizationTools)")
 
 td = datetime.date.today()       # Actual datetime
 
