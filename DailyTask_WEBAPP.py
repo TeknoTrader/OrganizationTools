@@ -61,7 +61,7 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
   else:
     st.write("\n### If the deadline is tomorrow, unfortunately this web app can't help you...\nAverage pages/tasks 📝 per day:\t",pages) # Only one day to finish all...
 
-  if (diff.days > 2):
+  if (diff.days > 2 and pages > 0):
     st.write("\n\n\n")
     st.write("# Do you want to have the time to do a review of your work or to relax? 🧘‍♀️")
     st.write("### You calculate how to do that: let's see different scenarios!")
@@ -91,23 +91,24 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
     # Try
     # Preparazione dei dati per la tabella
     data = {
-        'Days Off': [(1+i) * increment for i in range(len(days_number))],
-        'Pages/Tasks per Day': pages_number
+        'Days Off 🏖️': [(1+i) * increment for i in range(len(days_number))],
+        'Pages/Tasks per Day 👩🏻‍💻': pages_number
     }
 
     # Creazione del DataFrame
     df = pd.DataFrame(data)
 
     # Visualizzazione della tabella in Streamlit
-    st.write("## Recommended Study Plan")
+    st.write("## Roadmap in details")
     st.dataframe(df)  # or st.table(df)
 
 
     # Comments to clarify
     for i in range(len(days_number)):
-      if (len(days_number) > 10):
-        st.write(f"\nTo have {(1+i) * increment} days off, you should study/do: {pages_number[i]} pages/tasks 👩🏻‍💻 per day")
-      elif (len(days_number) > 5):
+      if (len(days_number) > 5):
+        # st.write(f"\nTo have {(1+i) * increment} days off, you should study/do: {pages_number[i]} pages/tasks 👩🏻‍💻 per day")
+        st.dataframe(df)  # or st.table(df)
+      elif (len(days_number) > 3):
         st.write("\n### To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
       else:
         st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
@@ -115,3 +116,7 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
 else:
     st.write("\n")
     st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### The exam/deadline should be AFTER the actual date!!!")
+
+if pages == 0:
+    st.write("\n")
+    st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### Insert the number of pages/hours!!!")
