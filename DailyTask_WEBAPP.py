@@ -126,7 +126,7 @@ else:
                     st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
               else: 
                 # you can also use st.dataframe(df) or st.table(df)
-                rad = st.sidebar.radio(
+                rad = st.radio(
                           "Type of table:",
                           ["Normal","Extended"]
                 )
