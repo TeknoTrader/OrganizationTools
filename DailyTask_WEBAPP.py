@@ -133,13 +133,23 @@ else:
                 if rad == "Normal (you can also downoad the dataframe)":
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
                 else:
+                          # CSS to inject contained in a string
+                          hide_table_row_index = """
+                                      <style>
+                                      thead tr th:first-child {display:none}
+                                      tbody th {display:none}
+                                      </style>
+                                      """
+
+                          # Inject CSS with Markdown
+                          st.markdown(hide_table_row_index, unsafe_allow_html=True)
+                          st.table(table1.style.format(subset=['mean'],
+                     decimal=',', precision=2).bar(subset=['mean'], align="mid"))
                           df.style.format(precision=0)
                           st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
                           df = pd.DataFrame(data).astype(float)
                           #df = df.style.format(precision=0)
-                          df_styled = df.style.format(precision=0).hide(axis='index')
-                          df_styled.reset_index(drop=True, inplace=True) 
-                          st.table(df_styled)
+                          
                           
       
           else:
