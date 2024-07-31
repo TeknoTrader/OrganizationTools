@@ -110,7 +110,7 @@ else:
               # Table vaues
               data = {
                   'Days Off 🏖️': [(1+i) * increment for i in range(len(days_number))],
-                  'Pages/Tasks per Day 👩🏻‍💻': round(pages_number, decimal)
+                  'Pages/Tasks per Day 👩🏻‍💻': pages_number
               }
 
               # Dataframe creation for the table
