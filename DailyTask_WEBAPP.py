@@ -55,9 +55,9 @@ def time_issue():
                     return False
                     
 if (time_issue()):
-    st.write("\n")
-    st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n")
-    st.write("# The month of", months[month1], "has only", calendar.monthrange(year1, int(month1))[1], "day...\n\n# Please, select another day.")
+          st.write("\n")
+          st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n")
+          st.write("# The month of", months[month1], "has only", calendar.monthrange(year1, int(month1))[1], "day...\n\n# Please, select another day.")
 
 else:
           ft = date(year,month1,day1)
@@ -67,66 +67,65 @@ else:
           # Days left?
           diff = ft - td   # How many days are left for the exam?
 
-st.write("\n")
-if(diff.days > 0) and (time_issue() == False):   # If there is a POSITIVE amount of days between exams and today
-  st.write("# STARTING OF THE OUTPUTS")
-  st.write ("\n### Days left ⏰ for the exam/deadline:\t",diff.days)                # Days left, output print
-  if (diff.days > 1):
-    st.write("\n### Average pages/tasks 📝 per day:\t",math.ceil(pages/(diff.days-1)))  # Round at the next integer number
-    st.write("\n Keep in mind that today is not included in the calculation.")
-    st.write("Also, all of the results are approximated: the result you see above was approximated at the next integer number avaible")
+          st.write("\n")
+          if(diff.days > 0) and (time_issue() == False):   # If there is a POSITIVE amount of days between exams and today
+            st.write("# STARTING OF THE OUTPUTS")
+            st.write ("\n### Days left ⏰ for the exam/deadline:\t",diff.days)                # Days left, output print
+            if (diff.days > 1):
+              st.write("\n### Average pages/tasks 📝 per day:\t",math.ceil(pages/(diff.days-1)))  # Round at the next integer number
+              st.write("\n Keep in mind that today is not included in the calculation.")
+              st.write("Also, all of the results are approximated: the result you see above was approximated at the next integer number avaible")
     
-  else:
-    st.write("\n### If the deadline is tomorrow, unfortunately this web app can't help you...\nAverage pages/tasks 📝 per day:\t",pages) # Only one day to finish all...
+            else:
+              st.write("\n### If the deadline is tomorrow, unfortunately this web app can't help you...\nAverage pages/tasks 📝 per day:\t",pages) # Only one day to finish all...
 
-  if (diff.days > 2) and (pages > 0) and (time_issue() == False):
-    st.write("\n\n\n")
-    st.write("# Do you want to have the time to do a review of your work or to relax? 🧘‍♀️")
-    st.write("### You calculate how to do that: let's see different scenarios!")
+            if (diff.days > 2) and (pages > 0) and (time_issue() == False):
+              st.write("\n\n\n")
+              st.write("# Do you want to have the time to do a review of your work or to relax? 🧘‍♀️")
+              st.write("### You calculate how to do that: let's see different scenarios!")
 
-    increment = st.number_input("Interval progression: ", min_value=1,step=1)  # Let's see different scenarios, starting from here
-    decimal = st.number_input("Decimal approximation: ", value=1, min_value=0, step=1)
-    possibilities = 0
-    pages_number = []
-    days_number = []
-    while diff.days > possibilities:   # Calculating the possible scenarios
-      possibilities += increment
-      if(diff.days-1-possibilities > 0):   # Avoiding 0 divisions or other common errors
-        pages_number.append(round(pages/(diff.days-1-possibilities),decimal))
-        days_number.append(possibilities)
-      else:
-        break  # End of the cycle in case of 0 division or negative numbers of days
-    # Chart creation
-    fig, ax = plt.subplots()
-    ax.bar(days_number, pages_number)
-    ax.set_xlabel('Rest days')
-    ax.set_ylabel('Pages/tasks per day')
-    ax.set_title('Possible organizations strategies')
+              increment = st.number_input("Interval progression: ", min_value=1,step=1)  # Let's see different scenarios, starting from here
+              decimal = st.number_input("Decimal approximation: ", value=1, min_value=0, step=1)
+              possibilities = 0
+              pages_number = []
+              days_number = []
+              while diff.days > possibilities:   # Calculating the possible scenarios
+                possibilities += increment
+                if(diff.days-1-possibilities > 0):   # Avoiding 0 divisions or other common errors
+                  pages_number.append(round(pages/(diff.days-1-possibilities),decimal))
+                  days_number.append(possibilities)
+                else:
+                  break  # End of the cycle in case of 0 division or negative numbers of days
+              # Chart creation
+              fig, ax = plt.subplots()
+              ax.bar(days_number, pages_number)
+              ax.set_xlabel('Rest days')
+              ax.set_ylabel('Pages/tasks per day')
+              ax.set_title('Possible organizations strategies')
 
-    # Visualization
-    if (len(days_number) > 1):
-      st.pyplot(fig)
+              # Visualization
+              if (len(days_number) > 1):
+                st.pyplot(fig)
 
-    # Try
-    # Preparazione dei dati per la tabella
-    data = {
-        'Days Off 🏖️': [(1+i) * increment for i in range(len(days_number))],
-        'Pages/Tasks per Day 👩🏻‍💻': pages_number
-    }
+              # Table vaues
+              data = {
+                  'Days Off 🏖️': [(1+i) * increment for i in range(len(days_number))],
+                  'Pages/Tasks per Day 👩🏻‍💻': pages_number
+              }
 
-    # Dataframe creation for the table
-    df = pd.DataFrame(data)
+              # Dataframe creation for the table
+              df = pd.DataFrame(data)
     
-    # Streamlit table or comments
-    st.write("## Roadmap in details")
-    if (len(days_number) < 5):
-      for i in range(len(days_number)):
-        if (len(days_number) > 3):
-          st.write("\n### To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
-        else:
-          st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
-    else:
-      st.dataframe(df)  # or st.table(df), but I don't like it
+              # Streamlit table or comments
+              st.write("## Roadmap in details")
+              if (len(days_number) < 5):
+                for i in range(len(days_number)):
+                  if (len(days_number) > 3):
+                    st.write("\n### To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
+                  else:
+                    st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
+              else:
+                st.dataframe(df)  # or st.table(df), but I don't like it
       
 else:
     st.write("\n")
@@ -135,3 +134,5 @@ else:
 if pages == 0:
     st.write("\n")
     st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### Insert the number of pages/hours!!!")
+
+   
