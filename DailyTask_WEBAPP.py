@@ -56,7 +56,7 @@ def time_issue():
                     
 if (time_issue()):
           st.write("\n")
-          st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n")
+          st.warning("# ⚠️ATTENTION⚠️\n")
           st.write("# The month of", months[month1], "has only", calendar.monthrange(year1, int(month1))[1], "day...\n\n# Please, select another day.")
 
 else:
@@ -128,21 +128,21 @@ else:
                 # you can also use st.dataframe(df) or st.table(df)
                 rad = st.radio(
                           "Type of table:",
-                          ["Normal","Extended"]
+                          ["Normal","Extended (better for decimals numbers)"]
                 )
-                if rad == "Extended":
+                if rad == "Normal":
+                          st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
+                else:
                           df.style.format(precision=0)
                           st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
-                else:
-                          st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
                           
       
           else:
               st.write("\n")
-              st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### The exam/deadline should be AFTER the actual date!!!")
+              st.warning("# ⚠️ATTENTION⚠️\n\n### The exam/deadline should be AFTER the actual date!!!")
 
           if pages == 0:
               st.write("\n")
-              st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### Insert the number of pages/hours!!!")
+              st.warning("# ⚠️ATTENTION⚠️\n\n### Insert the number of pages/hours!!!")
 
    
