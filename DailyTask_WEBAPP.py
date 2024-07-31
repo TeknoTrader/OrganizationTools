@@ -130,7 +130,7 @@ else:
                           "### Type of table:",
                           ["Normal (you can also downoad the dataframe as CSV file)","Extended (better for decimals numbers visualization)"]
                 )
-                if rad == "Normal (you can also downoad the datafram as CSV file)":
+                if rad == "Normal (you can also downoad the dataframe as CSV file)":
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
                 else: #if (rad =="Extended (better for decimals numbers visualization)"):
                           table1 = pd.DataFrame({'Days Off 🏖️ you can get':[(1+i) * increment for i in range(len(days_number))], 'Pages/Tasks per Day 👩🏻‍💻': pages_number})
