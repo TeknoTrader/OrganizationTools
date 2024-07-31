@@ -138,6 +138,8 @@ else:
                 else:
                           # Creazione delle righe della tabella
                           for i, row in df.iterrows():
+                              # Inizializzazione della stringa Markdown per la tabella
+                              markdown_table = "| Days Off 🏖️ | Pages/Tasks per Day 👩🏻‍💻 |\n|:------------:|:-------------------------:|\n"
                               days_off = row['Days Off 🏖️']
                               pages_tasks = f"{row['Pages/Tasks per Day 👩🏻‍💻']:.2f}"  # Formattazione a 2 decimali
                               markdown_table += f"| {days_off} | {pages_tasks} |\n"
