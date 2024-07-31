@@ -138,6 +138,7 @@ else:
                           df = pd.DataFrame(data).astype(float)
                           #df = df.style.format(precision=0)
                           df_styled = df.style.format(precision=0).hide(axis='index')
+                          df_styled.reset_index(drop=True, inplace=True) 
                           st.table(df_styled)
                           
       
