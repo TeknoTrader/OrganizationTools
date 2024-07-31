@@ -115,7 +115,6 @@ else:
 
               # Dataframe creation for the table
               df = pd.DataFrame(data)
-              df['Pages/Tasks per Day'] = df['Pages/Tasks per Day'].round(decimal)
     
               # Streamlit table or comments
               st.write("## Roadmap in details")
