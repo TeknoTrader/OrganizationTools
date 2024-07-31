@@ -127,12 +127,12 @@ else:
               else:
                 st.dataframe(df)  # or st.table(df), but I don't like it
       
-else:
-    st.write("\n")
-    st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### The exam/deadline should be AFTER the actual date!!!")
+          else:
+              st.write("\n")
+              st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### The exam/deadline should be AFTER the actual date!!!")
 
-if pages == 0:
-    st.write("\n")
-    st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### Insert the number of pages/hours!!!")
+          if pages == 0:
+              st.write("\n")
+              st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### Insert the number of pages/hours!!!")
 
    
