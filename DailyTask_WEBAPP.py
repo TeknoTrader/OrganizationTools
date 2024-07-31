@@ -128,9 +128,9 @@ else:
                 # you can also use st.dataframe(df) or st.table(df)
                 rad = st.radio(
                           "### Type of table:",
-                          ["Normal (you can also downoad the dataframe)","Extended (better for decimals numbers visualization)", "Advaced"]
+                          ["Normal (you can also downoad the dataframe as CSV file)","Extended (better for decimals numbers visualization)", "Advaced"]
                 )
-                if rad == "Normal (you can also downoad the dataframe)":
+                if rad == "Normal (you can also downoad the datafram as CSV file)":
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
                 elif (rad =="Extended (better for decimals numbers visualization)"):
                           table1 = pd.DataFrame({'Days Off 🏖️ you can get':[(1+i) * increment for i in range(len(days_number))], 'Pages/Tasks per Day 👩🏻‍💻': pages_number})
