@@ -67,7 +67,7 @@ pages = st.number_input("Number of pages/tasks: ", step=1)
 diff = ft - td   # How many days are left for the exam?
 
 st.write("\n")
-if(diff.days > 0) and (!time_issue()):   # If there is a POSITIVE amount of days between exams and today
+if(diff.days > 0) and (time_issue() == False):   # If there is a POSITIVE amount of days between exams and today
   st.write("# STARTING OF THE OUTPUTS")
   st.write ("\n### Days left ⏰ for the exam/deadline:\t",diff.days)                # Days left, output print
   if (diff.days > 1):
@@ -78,7 +78,7 @@ if(diff.days > 0) and (!time_issue()):   # If there is a POSITIVE amount of days
   else:
     st.write("\n### If the deadline is tomorrow, unfortunately this web app can't help you...\nAverage pages/tasks 📝 per day:\t",pages) # Only one day to finish all...
 
-  if (diff.days > 2) and (pages > 0) and !time_issue:
+  if (diff.days > 2) and (pages > 0) and (time_issue() == False):
     st.write("\n\n\n")
     st.write("# Do you want to have the time to do a review of your work or to relax? 🧘‍♀️")
     st.write("### You calculate how to do that: let's see different scenarios!")
