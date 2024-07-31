@@ -146,7 +146,7 @@ else:
 
                           # Display a static table
                           st.table(table1.style.format(subset=['Pages/Tasks per Day 👩🏻‍💻'],
-                                       decimal=',', precision=2).bar(subset=['Pages/Tasks per Day 👩🏻‍💻'], align="mid"))
+                                       decimal=',', precision=decimal).bar(subset=['Pages/Tasks per Day 👩🏻‍💻'], align="mid"))
                           
                 else:
                           df.style.format(precision=0)
