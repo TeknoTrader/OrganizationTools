@@ -131,6 +131,7 @@ else:
                           ["Normal","Extended"]
                 )
                 if rad == "Extended":
+                          df.style.format(precision=0)
                           st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
                 else:
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
