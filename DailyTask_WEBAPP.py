@@ -100,10 +100,7 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
 
     # Visualizzazione della tabella in Streamlit
     st.write("## Recommended Study Plan")
-    st.dataframe(df)  # Usa st.table(df) per una tabella statica
-
-# Alternativa: visualizzare come tabella statica
-# st.table(df)
+    st.dataframe(df)  # or st.table(df)
 
 
     # Comments to clarify
