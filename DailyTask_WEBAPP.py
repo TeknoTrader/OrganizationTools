@@ -104,15 +104,15 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
 
 
     # Comments to clarify
-    if (len(days_number) > 5):
-      st.dataframe(df)  # or st.table(df)
-    else:
+    if (len(days_number) < 5):
       for i in range(len(days_number)):
         if (len(days_number) > 3):
           st.write("\n### To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
         else:
           st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
-
+    else:
+      st.dataframe(df)  # or st.table(df)
+      
 else:
     st.write("\n")
     st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### The exam/deadline should be AFTER the actual date!!!")
