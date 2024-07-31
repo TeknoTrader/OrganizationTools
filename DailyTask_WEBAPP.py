@@ -128,7 +128,7 @@ else:
                 # you can also use st.dataframe(df) or st.table(df)
                 rad = st.radio(
                           "Type of table:",
-                          ["Normal","Extended (better for decimals numbers)"]
+                          ["Normal (you can also downoad the dataframe)","Extended (better for decimals numbers)"]
                 )
                 if rad == "Normal":
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
