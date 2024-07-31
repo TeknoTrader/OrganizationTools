@@ -133,7 +133,9 @@ else:
                 if rad == "Normal (you can also downoad the dataframe)":
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
                 else:
-                          df.style.format(precision=0)
+                          #df.style.format(precision=0)
+                          df = pd.DataFrame(data).astype(float)
+                          df = df.style.format(precision=0)
                           st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
                           df = pd.DataFrame(data).astype(float)
                           df = df.style.format(precision=0)
