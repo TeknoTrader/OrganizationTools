@@ -51,7 +51,7 @@ months = ["January", "February", "March", "April", "May", "June",
 if (calendar.monthrange(year1, int(month1))[1] < int(day1)):
     st.write("\n")
     st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n")
-    st.write("The monthe of", months[month1]), "has only", calendar.monthrange(year1, int(month1))[1], "day\n\n###Please, select another day.")
+    st.write("The monthe of", months[month1], "has only", calendar.monthrange(year1, int(month1))[1], "day\n\n###Please, select another day.")
 
 ft = date(year,month1,day1)
 st.write("### How much do you have to study/work 📖?")
