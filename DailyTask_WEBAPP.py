@@ -127,7 +127,7 @@ else:
               else: 
                 # you can also use st.dataframe(df) or st.table(df)
                 st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
-                st.dataframe(df.set_index(df.columns[0]))
+                st.table(df.set_index(df.columns[0]))
       
           else:
               st.write("\n")
