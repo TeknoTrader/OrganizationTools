@@ -88,6 +88,24 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
     if (len(days_number) > 1):
       st.pyplot(fig)
 
+    # Try
+    # Preparazione dei dati per la tabella
+    data = {
+        'Days Off': [(1+i) * increment for i in range(len(days_number))],
+        'Pages/Tasks per Day': pages_number
+    }
+
+    # Creazione del DataFrame
+    df = pd.DataFrame(data)
+
+    # Visualizzazione della tabella in Streamlit
+    st.write("## Recommended Study Plan")
+    st.dataframe(df)  # Usa st.table(df) per una tabella statica
+
+# Alternativa: visualizzare come tabella statica
+# st.table(df)
+
+
     # Comments to clarify
     for i in range(len(days_number)):
       if (len(days_number) > 10):
