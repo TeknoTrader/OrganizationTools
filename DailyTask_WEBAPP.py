@@ -59,12 +59,13 @@ if (time_issue()):
     st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n")
     st.write("# The month of", months[month1], "has only", calendar.monthrange(year1, int(month1))[1], "day...\n\n# Please, select another day.")
 
-ft = date(year,month1,day1)
-st.write("### How much do you have to study/work 📖?")
-pages = st.number_input("Number of pages/tasks: ", step=1)
+else:
+          ft = date(year,month1,day1)
+          st.write("### How much do you have to study/work 📖?")
+          pages = st.number_input("Number of pages/tasks: ", step=1)
 
-# Days left?
-diff = ft - td   # How many days are left for the exam?
+          # Days left?
+          diff = ft - td   # How many days are left for the exam?
 
 st.write("\n")
 if(diff.days > 0) and (time_issue() == False):   # If there is a POSITIVE amount of days between exams and today
