@@ -128,11 +128,11 @@ else:
                 # you can also use st.dataframe(df) or st.table(df)
                 rad = st.radio(
                           "### Type of table:",
-                          ["Normal (you can also downoad the dataframe as CSV file)","Extended (better for decimals numbers visualization)", "Advaced"]
+                          ["Normal (you can also downoad the dataframe as CSV file)","Extended (better for decimals numbers visualization)"]
                 )
                 if rad == "Normal (you can also downoad the datafram as CSV file)":
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
-                elif (rad =="Extended (better for decimals numbers visualization)"):
+                else: #if (rad =="Extended (better for decimals numbers visualization)"):
                           table1 = pd.DataFrame({'Days Off 🏖️ you can get':[(1+i) * increment for i in range(len(days_number))], 'Pages/Tasks per Day 👩🏻‍💻': pages_number})
                           # CSS to inject contained in a string
                           hide_table_row_index = """
@@ -148,10 +148,11 @@ else:
                           st.table(table1.style.format(subset=['Pages/Tasks per Day 👩🏻‍💻'],
                                        decimal=',', precision=decimal).bar(subset=['Pages/Tasks per Day 👩🏻‍💻'], align="mid"))
                           
-                else:
-                          df.style.format(precision=0)
-                          st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
-                          df = pd.DataFrame(data).astype(float)
+         # Another way to do it                 
+         #       else:
+         #                 df.style.format(precision=0)
+         #                 st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
+         #                 df = pd.DataFrame(data).astype(float)
                           #df = df.style.format(precision=0)
                           
                           
