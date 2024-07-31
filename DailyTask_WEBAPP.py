@@ -110,7 +110,7 @@ else:
               # Table vaues
               data = {
                   'Days Off 🏖️': [(1+i) * increment for i in range(len(days_number))],
-                  'Pages/Tasks per Day 👩🏻‍💻': pages_number
+                  'Pages/Tasks per Day 👩🏻‍💻': round(pages_number, decimal)
               }
 
               # Dataframe creation for the table
@@ -124,9 +124,8 @@ else:
                     st.write("\n### To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
                   else:
                     st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
-              else:
-                st.dataframe(df)  # or 
-                st.table(df)
+              else: 
+                st.table(df) # or st.dataframe(df)
       
           else:
               st.write("\n")
