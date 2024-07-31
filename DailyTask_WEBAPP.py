@@ -95,15 +95,11 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
         'Pages/Tasks per Day 👩🏻‍💻': pages_number
     }
 
-    # Creazione del DataFrame
+    # Dataframe creation for the table
     df = pd.DataFrame(data)
-
-    # Visualizzazione della tabella in Streamlit
+    
+    # Streamlit table or comments
     st.write("## Roadmap in details")
-    st.dataframe(df)  # or st.table(df)
-
-
-    # Comments to clarify
     if (len(days_number) < 5):
       for i in range(len(days_number)):
         if (len(days_number) > 3):
