@@ -61,7 +61,7 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
   else:
     st.write("\n### If the deadline is tomorrow, unfortunately this web app can't help you...\nAverage pages/tasks 📝 per day:\t",pages) # Only one day to finish all...
 
-  if (diff.days > 2 and pages > 0):
+  if (diff.days > 2) and (pages > 0):
     st.write("\n\n\n")
     st.write("# Do you want to have the time to do a review of your work or to relax? 🧘‍♀️")
     st.write("### You calculate how to do that: let's see different scenarios!")
