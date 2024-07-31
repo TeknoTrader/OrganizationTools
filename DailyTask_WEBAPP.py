@@ -143,8 +143,8 @@ else:
 
                           # Inject CSS with Markdown
                           st.markdown(hide_table_row_index, unsafe_allow_html=True)
-                          st.table(table1.style.format(subset=['mean'],
-                     decimal=',', precision=2).bar(subset=['mean'], align="mid"))
+                          st.table(table1.style.format(subset=['Pages/Tasks per Day 👩🏻‍💻'],
+                     decimal=',', precision=2).bar(subset=['Pages/Tasks per Day 👩🏻‍💻'], align="mid"))
                           df.style.format(precision=0)
                           st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
                           df = pd.DataFrame(data).astype(float)
