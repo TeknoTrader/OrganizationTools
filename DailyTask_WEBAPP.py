@@ -130,7 +130,7 @@ else:
                           "Type of table:",
                           ["Normal (you can also downoad the dataframe)","Extended (better for decimals numbers visualzation)"]
                 )
-                if rad == "Normal":
+                if rad == "Normal (you can also downoad the dataframe)":
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
                 else:
                           df.style.format(precision=0)
