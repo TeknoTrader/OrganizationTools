@@ -126,8 +126,14 @@ else:
                     st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
               else: 
                 # you can also use st.dataframe(df) or st.table(df)
-                st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
-                st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
+                rad = st.sidebar.radio(
+                          "Type of table:",
+                          ["Normal","Extended"]
+                )
+                if rad == extended:
+                          st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
+                else:
+                          st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
       
           else:
               st.write("\n")
