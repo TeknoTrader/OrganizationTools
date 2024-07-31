@@ -137,7 +137,7 @@ else:
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
                 else:
                           # Creazione delle righe della tabella
-                          markdown_table = "| Days Off 🏖️ | Pages/Tasks per Day 👩🏻‍💻 |\n|:------------:|:-------------------------:|\n
+                          markdown_table = "| Days Off 🏖️ | Pages/Tasks per Day 👩🏻‍💻 |\n|:------------:|:-------------------------:|\n"
                           for i, row in df.iterrows():
                                     
                               # Inizializzazione della stringa Markdown per la tabella
