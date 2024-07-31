@@ -128,13 +128,19 @@ else:
                 # you can also use st.dataframe(df) or st.table(df)
                 rad = st.radio(
                           "Type of table:",
-                          ["Normal","Extended"]
+                          ["Normal","Extended", "Test"]
                 )
                 if rad == "Extended":
                           df.style.format(precision=0)
                           st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
-                else:
+                elif rad == "Normal":
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
+                else:
+                          # Creazione delle righe della tabella
+                          for i, row in df.iterrows():
+                              days_off = row['Days Off 🏖️']
+                              pages_tasks = f"{row['Pages/Tasks per Day 👩🏻‍💻']:.2f}"  # Formattazione a 2 decimali
+                              markdown_table += f"| {days_off} | {pages_tasks} |\n"
       
           else:
               st.write("\n")
