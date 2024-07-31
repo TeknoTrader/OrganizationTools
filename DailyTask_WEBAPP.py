@@ -132,7 +132,10 @@ else:
                 )
                 if rad == "Normal (you can also downoad the dataframe as CSV file)":
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
+               
                 else: #if (rad =="Extended (better for decimals numbers visualization)"):
+                          # I found all this function here: https://stackoverflow.com/questions/69875734/how-to-hide-dataframe-index-on-streamlit
+                          # It is really interesting and I hope that you'll find some inspiration, too
                           table1 = pd.DataFrame({'Days Off 🏖️ you can get':[(1+i) * increment for i in range(len(days_number))], 'Pages/Tasks per Day 👩🏻‍💻': pages_number})
                           # CSS to inject contained in a string
                           hide_table_row_index = """
