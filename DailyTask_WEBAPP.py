@@ -128,7 +128,7 @@ else:
                 # you can also use st.dataframe(df) or st.table(df)
                 rad = st.radio(
                           "Type of table:",
-                          ["Normal","Extended", "Test"]
+                          ["Normal","Extended"]
                 )
                 if rad == "Extended":
                           df.style.format(precision=0)
