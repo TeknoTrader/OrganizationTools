@@ -44,7 +44,13 @@ year1 = st.number_input("Insert the year: ", min_value = td.year, value = td.yea
 year = int(year1)   #,value = 2024, step = 1)#value = datetime.today().year)  # Insert the year of the exam
 month1 = st.slider("Month: ", min_value=1, max_value=12, value = td.month, step=1)
 day1 = st.slider("Day: ", min_value=1, max_value = 31, value = td.day, step=1)
-#calendar.monthrange(year1, int(month1))[1]
+
+months = ["January", "February", "March", "April", "May", "June", 
+          "July", "August", "September", "October", "November", "December"]
+
+if (calendar.monthrange(year1, int(month1))[1] < int(day1)):
+    st.write("\n")
+    st.warning("# ⚠️⚠️⚠️ATTENTION⚠️⚠️⚠️\n\n### The monthe of", months[int(month1)-1], "has only", calendar.monthrange(year1, int(month1))[1], "day\n\n###Please, select another day.")
 
 ft = date(year,month1,day1)
 st.write("### How much do you have to study/work 📖?")
