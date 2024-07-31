@@ -133,7 +133,7 @@ else:
                 if rad == "Normal (you can also downoad the dataframe)":
                           st.dataframe(df, hide_index=True)  #another way to hide column: st.dataframe(df.set_index(df.columns[0]))
                 else:
-                          table1 = pd.DataFrame({'N':[10, 20, 30], 'mean':[4.1, 5.6, 6.3]})
+                          table1 = pd.DataFrame({'N':[(1+i) * increment for i in range(len(days_number))], 'mean': pages_number})
                           # CSS to inject contained in a string
                           hide_table_row_index = """
                                       <style>
