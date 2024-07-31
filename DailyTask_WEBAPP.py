@@ -126,6 +126,8 @@ else:
                     st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
               else: 
                 st.table(df) # or st.dataframe(df)
+                st.table(df.style.hide(axis="index"))
+                st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
       
           else:
               st.write("\n")
