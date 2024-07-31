@@ -127,7 +127,7 @@ else:
               else: 
                 # you can also use st.dataframe(df) or st.table(df)
                 rad = st.radio(
-                          "Type of table:",
+                          "### Type of table:",
                           ["Normal (you can also downoad the dataframe)","Extended (better for decimals numbers visualzation)"]
                 )
                 if rad == "Normal (you can also downoad the dataframe)":
