@@ -107,7 +107,8 @@ if(diff.days > 0):   # If there is a POSITIVE amount of days between exams and t
         else:
           st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
     else:
-      st.dataframe(df)  # or st.table(df)
+      st.dataframe(df)  # or 
+      st.table(df)
       
 else:
     st.write("\n")
