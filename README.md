@@ -3,7 +3,7 @@ Here you can find the simple python codes I use in order to **organize myself** 
 
 You can use this programs to:
 - Understand how much you have to work in order to **reach a predifined goal**.
-- Create a **study plan**.
+- Create a **study plan** (you can as well use this web app for work, obviously).
 - **Define a realistical objective**.
 
 I hope you'll find this codes useful, and don't hesitate to reach me via email (*nicola.chimenti.work@gmail.com*) if you have any problem or question!
