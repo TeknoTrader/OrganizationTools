@@ -48,18 +48,21 @@ day1 = st.slider("Day: ", min_value=1, max_value = 31, value = td.day, step=1)
 months = ["January", "February", "March", "April", "May", "June", 
           "July", "August", "September", "October", "November", "December"]
 
+# Avoiding errors like selecting 31 of february, or other inexisting days
 def time_issue():
           if(calendar.monthrange(year1, int(month1))[1] < int(day1)):
                     return True
           else:
                     return False
-                    
+
+# Print alert and don't execute the program if it was selected an "impossible day"
 if (time_issue()):
           st.write("\n")
           st.warning("# ⚠️ATTENTION⚠️\n")
           st.write("# The month of", months[month1], "has only", calendar.monthrange(year1, int(month1))[1], "day...\n\n# Please, select another day.")
 
 else:
+          # Another input to the user
           ft = date(year,month1,day1)
           st.write("### How much do you have to study/work 📖?")
           pages = st.number_input("Number of pages/tasks: ", step=1)
@@ -67,6 +70,7 @@ else:
           # Days left?
           diff = ft - td   # How many days are left for the exam?
 
+          # Calculate how much time the user has, and a first approximation of the study/work plan
           st.write("\n")
           if(diff.days > 0) and (time_issue() == False):   # If there is a POSITIVE amount of days between exams and today
             st.write("# STARTING OF THE OUTPUTS")
@@ -79,14 +83,18 @@ else:
             else:
               st.write("\n### If the deadline is tomorrow, unfortunately this web app can't help you...\nAverage pages/tasks 📝 per day:\t",pages) # Only one day to finish all...
 
+            # Let's calculate how much should the user study/work if he doesn't want to keep working every single day
             if (diff.days > 2) and (pages > 0) and (time_issue() == False):
               st.write("\n\n\n")
               st.write("# Do you want to have the time to do a review of your work or to relax? 🧘‍♀️")
               st.write("### You calculate how to do that: let's see different scenarios!")
 
+              # First of all: the inputs for the calculation!
               increment = st.number_input("Interval progression: ", min_value=1,step=1)  # Let's see different scenarios, starting from here
               decimal = st.number_input("Decimal approximation: ", value=1, min_value=0, step=1)
               possibilities = 0
+
+              # Using arrays to make it simple for the visualization
               pages_number = []
               days_number = []
               while diff.days > possibilities:   # Calculating the possible scenarios
@@ -96,6 +104,7 @@ else:
                   days_number.append(possibilities)
                 else:
                   break  # End of the cycle in case of 0 division or negative numbers of days
+              
               # Chart creation
               fig, ax = plt.subplots()
               ax.bar(days_number, pages_number)
@@ -107,7 +116,8 @@ else:
               if (len(days_number) > 1):
                 st.pyplot(fig)
 
-              # Table vaues
+              # Table vaues (for the next chart)
+              # This step requires a pandas dataframe
               data = {
                   'Days Off 🏖️': [(1+i) * increment for i in range(len(days_number))],
                   'Pages/Tasks per Day 👩🏻‍💻': pages_number
@@ -125,7 +135,7 @@ else:
                   else:
                     st.write("\n# To have ", (1+i) * increment, " days off, you should study/do: ", pages_number[i], " pages/tasks 👩🏻‍💻 per day")
               else: 
-                # you can also use st.dataframe(df) or st.table(df)
+                        # Let's find out which kind of representation the user wants to see
                 rad = st.radio(
                           "### Type of table:",
                           ["Normal (you can also downoad the dataframe as CSV file)","Extended (better for decimals numbers visualization)"]
@@ -157,9 +167,10 @@ else:
          #                 st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
          #                 df = pd.DataFrame(data).astype(float)
                           #df = df.style.format(precision=0)
+          
+         # you can also use st.dataframe(df) or st.table(df)      
                           
-                          
-      
+      # Last error messages for invalid day (the user keeps the "today date") or for number of pages/work == 0
           else:
               st.write("\n")
               st.warning("# ⚠️ATTENTION⚠️\n\n### The exam/deadline should be AFTER the actual date!!!")
