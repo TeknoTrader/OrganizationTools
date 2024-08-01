@@ -35,6 +35,8 @@ td = datetime.date.today()       # Actual datetime
 # Description of the program
 st.write("# LET'S ORGANIZE YOUR STUDY/WORK! 🏃")
 st.write("### With this simple and practise web application you can see how much you should work/study to complete a certain task within a certain date")
+st.divider()  # Horizontal separator
+
 # INPUTS
 # The day of the exam
 st.write("# First step: INSERT DETAILS ABOUT THE 📚 EXAM/DEADLINE")
