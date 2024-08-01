@@ -87,7 +87,9 @@ else:
 
             # Let's calculate how much should the user study/work if he doesn't want to keep working every single day
             if (diff.days > 2) and (pages > 0) and (time_issue() == False):
-              st.write("\n\n\n")
+              st.write("\n\n")
+              st.divider()
+              st.write("\n\n")
               st.write("# Do you want to have the time to do a review of your work or to relax? 🧘‍♀️")
               st.write("### You calculate how to do that: let's see different scenarios!")
 
