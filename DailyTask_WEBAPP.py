@@ -22,7 +22,6 @@ st.sidebar.image("https://i.postimg.cc/7LynpkrL/Whats-App-Image-2024-07-27-at-16
 st.sidebar.write("\n# CONTACT ME")
 st.sidebar.write("### ◾ [LinkedIn](https://www.linkedin.com/in/nicolachimenti?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)")
 st.sidebar.write("### ◾ Email: nicola.chimenti.work@gmail.com")
-# st.sidebar.write("### ◾ [Fiverr](https://www.fiverr.com/teknonicola?public_mode=true)")
 st.sidebar.write("\n# RESOURCES")
 st.sidebar.write("◾ [GitHub Profile](https://github.com/TeknoTrader)")
 st.sidebar.write("◾ [MQL5 Profile](https://www.mql5.com/it/users/teknotrader) with reviews")
@@ -43,7 +42,7 @@ st.write("# First step: INSERT DETAILS ABOUT THE 📚 EXAM/DEADLINE")
 st.write("### Let's see when we are going to do it\n### Please, insert the date compiling the following parameters 📅\n")
 year = 2024
 year1 = st.number_input("Insert the year: ", min_value = td.year, value = td.year, step=1)
-year = int(year1)   #,value = 2024, step = 1)#value = datetime.today().year)  # Insert the year of the exam
+year = int(year1)   # Insert the year of the exam
 month1 = st.slider("Month: ", min_value=1, max_value=12, value = td.month, step=1)
 day1 = st.slider("Day: ", min_value=1, max_value = 31, value = td.day, step=1)
 
