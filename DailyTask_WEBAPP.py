@@ -22,7 +22,7 @@ st.sidebar.write("I have a degree in \"Digital Economics\" and I love finance, p
 st.sidebar.image("https://i.postimg.cc/7LynpkrL/Whats-App-Image-2024-07-27-at-16-36-44.jpg") # caption="My name is Nicola Chimenti and I am a Business Analyst and MQL4." , use_column_width=True)
 st.sidebar.write("\n# CONTACT ME")
 st.sidebar.write("### ◾ [LinkedIn](https://www.linkedin.com/in/nicolachimenti?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)")
-st.sidebar.write("### ◾ [Fiverr profile](https://www.fiverr.com/sellers/teknonicola/")
+st.sidebar.write("### ◾ [Fiverr profile](https://www.fiverr.com/sellers/teknonicola/)")
 st.sidebar.write("### ◾ Email: nicola.chimenti.work@gmail.com")
 st.sidebar.write("\n# RESOURCES")
 st.sidebar.write("◾ [GitHub Profile](https://github.com/TeknoTrader)")
