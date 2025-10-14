@@ -17,7 +17,8 @@ import calendar
 
 # Some information about me
 st.sidebar.write("# Who built this web application?")
-st.sidebar.write("My name is Nicola Chimenti and I am a Business Analyst and MQL4.\nI have a degree in \"Digital Economics\" and I love finance, programming and Data Science")
+st.sidebar.write("My name is Nicola Chimenti and I am a Business Analyst and MQL4 developer.")
+st.sidebar.write("I have a degree in \"Digital Economics\" and I love finance, programming and Data Science.")
 st.sidebar.image("https://i.postimg.cc/7LynpkrL/Whats-App-Image-2024-07-27-at-16-36-44.jpg") # caption="My name is Nicola Chimenti and I am a Business Analyst and MQL4." , use_column_width=True)
 st.sidebar.write("\n# CONTACT ME")
 st.sidebar.write("### ◾ [LinkedIn](https://www.linkedin.com/in/nicolachimenti?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)")
