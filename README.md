@@ -130,16 +130,6 @@ Choose the scenario that matches your reading speed and schedule!
 
 ---
 
-## 📸 Screenshots
-
-*The app features a clean interface with:*
-- Sidebar with developer info and resources
-- Step-by-step input sections
-- Clear warning messages for invalid inputs
-- Interactive charts and customizable tables
-
----
-
 ## 🛠️ Technical Details
 
 - Built with **Python 3.x**
