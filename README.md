@@ -144,17 +144,10 @@ Choose the scenario that matches your reading speed and schedule!
 
 Found a bug or have a suggestion? I'd love to hear from you!
 
-- 📧 Email: **teknotrader.nc@gmail.com**
+- 🖥️ Website: **[My website](https://www.nicolachimenti.com)** (in italian!)
+- 📧 Email: **preventivi@nicolachimenti.com**
 - 🔗 LinkedIn: **[Nicola Chimenti](https://www.linkedin.com/in/nicolachimenti)**
 - 💼 Fiverr: **[teknonicola](https://www.fiverr.com/sellers/teknonicola/)**
-
----
-
-## 🌟 Other Projects
-
-Check out my other work:
-- **[MQL4 Trading Indicators](https://www.mql5.com/en/users/teknotrader)** — Custom MetaTrader tools
-- **[Free MT4 Software](https://www.mql5.com/it/users/teknotrader/seller)** — Trading utilities
 
 ---
 
